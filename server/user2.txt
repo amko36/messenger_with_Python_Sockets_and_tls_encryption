@@ -1,0 +1,2 @@
+r::user1::16/01/2024 12:39:19::Hello Bob! It's Alice How're you?
+r::user3::16/01/2024 12:41:21::Hi Bob! I'll arrive in 10 minutes

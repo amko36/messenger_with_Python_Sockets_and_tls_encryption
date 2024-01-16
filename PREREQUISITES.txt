@@ -1,0 +1,22 @@
+The following libraries are required: 
+    on the server side: 
+        socket
+        hashlib (for password  hashing. By default passwords are stored in passwd.txt)
+        datetime
+        ssl(for connection encryption)
+    on the client side: 
+        socket
+        ssl
+        getpass (used for hiding passwords while entering them in the terminal)
+
+SSL 
+In current example, all certificates are stored in server/certs. 
+I recommend you to regenerate at least a private(cert-key.pem) and public (cert-server.pem) server keys. The pass phrase of the private CA key (ca-key.pem) is "bonjour".
+Anyway, the ssl connexion won't work if you don't regenerate the server's public certificate. 
+To do this, you need:
+    - replace the ip address in certs/extfile.cnf by your server's one;
+    - go to certs/ folder and enter the following command:
+        openssl x509 -req -sha256 -days 365 -in cert-query.csr -CA ca-cert.pem -CAkey ca-key.pem -out cert-server.pem -extfile extfile.cnf -CAcreateserial 
+
+CONNECTION
+You need to change the server's ip address with your server's ip address in client/client.py file. You also can change the connection port, if you need.
